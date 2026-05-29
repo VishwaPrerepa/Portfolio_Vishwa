@@ -1,5 +1,5 @@
 import streamlit as st
-import re #regex
+import re #regex 
 
 st.set_page_config(
     page_title="My Profile | Bio Data",
