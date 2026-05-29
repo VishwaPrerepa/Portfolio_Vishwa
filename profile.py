@@ -115,7 +115,7 @@ with tab2:
         st.write("- I completed my schooling at Future Kids School, where I developed a strong foundation in various subjects and actively participated in extracurricular activities.")
         st.write("- I studied here from first grade to tenth grade, learning how to play a wide range of sports and improving my critical thinking abilities.")
         st.write("- I also took part in various competitions and events, which helped me develop my teamwork skills. Specifically, I took part in Chess, Table Tennis, Cricket, Rubix Cube, etc where I've won numerous awardds and trophies")
-        st.write("- I scored an overall percentage of 87 in my 10th grade, with my highest subjecting being 92 in geography")
+        st.write("- I scored an overall percentage of 87 in my 10th grade, with my highest subject being 92 in geography")
         st.write("- Although this score isn't the highest, the board was ICSE so my marks were well above the average")
        
     with c2:
