@@ -179,7 +179,7 @@ with tab3:
         st.divider()
 
         st.subheader("💭Subject Interests")
-        st.write("I've always enjoyed both Mathematics and Chemistry, with a little bit of Physics. I enjoy deep-diving into the subject, immercing myself into the different methodologies of different professors.")
+        st.write("I've always enjoyed both Mathematics and Chemistry, with a little bit of Physics. I enjoy deep-diving into the subject, immersing myself into the different methodologies of different professors.")
         st.write("I've always strived to reach the top of my class and have always tried my best. I am currently learning Python and have undertaken a plethora of projects.")
         
         st.divider()
