@@ -154,7 +154,7 @@ with tab2:
     st.progress(1.00, text="60/60")
 
     st.markdown("#### 📝 English")
-    st.progress(0.84, text="98/100")
+    st.progress(0.98, text="98/100")
 
     st.markdown("#### 🥖 French")
     st.progress(0.99, text="99/100")
