@@ -133,7 +133,7 @@ with tab2:
 
     with n1:
       st.header("🏆**Average**")
-      st.metric(label="", value="96.1%", delta="📈452/470") 
+      st.metric(label="", value="99.1%", delta="📈452/470") 
     
     with n2:
       st.header("🔥**MPC CORE AVERAGE**")
@@ -154,7 +154,7 @@ with tab2:
     st.progress(1.00, text="60/60")
 
     st.markdown("#### 📝 English")
-    st.progress(0.84, text="84/100")
+    st.progress(0.84, text="98/100")
 
     st.markdown("#### 🥖 French")
     st.progress(0.99, text="99/100")
@@ -254,7 +254,6 @@ with tab4:
         st.write(f"Total Bill: ₹{total_bill:.2f}")
 
     st.write("**Status:** ✅ Completed")
-    st.write("Difficulty: ⭐⭐⭐☆☆")
     st.write("A financial utility application that helps users calculate expenses and split bills fairly among friends. The app allows users to enter the total bill amount, select a tip percentage, and specify the number of people sharing the expense. It then instantly calculates the final amount and each person's share, making group payments simple and transparent.")
     st.write("**🛠 Technologies Used:**")
     st.write("• Python")
@@ -300,7 +299,6 @@ with tab4:
                 st.error("Obese")
 
     st.write("**Status:** ✅ Completed")
-    st.write("Difficulty: ⭐⭐☆☆☆")
     st.write("A health and fitness application that calculates a user's Body Mass Index (BMI) based on their height and weight. The app instantly determines the BMI value and classifies it into categories such as Underweight, Normal Weight, Overweight, or Obese, helping users better understand their health status.")
     st.write("**🛠 Technologies Used:**")
     st.write("• Python")
@@ -349,8 +347,7 @@ with tab4:
             st.metric(label="compound interest", value=f"${Compound_interest}")
             st.metric(label="Total_Amount", value=f"${Total_Amount}")
 
-    st.write("**Status:** ✅ Completed")
-    st.write("Difficulty: ⭐⭐⭐☆☆")
+    st.write("**Status:** ✅ Complete")
     st.write("A financial application that calculates both Simple Interest and Compound Interest based on the user's principal amount, interest rate, and investment period. The app instantly displays the interest earned and the final amount, helping users understand how money grows over time.")
     st.write("**🛠 Technologies Used:**")
     st.write("• Python")
@@ -363,6 +360,183 @@ with tab4:
     st.write("• Compound Interest calculation")
     st.write("• Instant result display")
     st.write("• Clean and interactive user interface")
+
+    st.divider()
+    st.subheader("4.🧮 Math Utility Program")
+
+    with st.expander("🧮Tap to see"):
+
+        st.title("🧮 Math Utility Program")
+
+        choice = st.selectbox(
+            "What do you want to do?",
+            (
+                "---Select--",
+                "Fibonacci Series",
+                "Prime Numbers",
+                "HCF",
+                "LCM",
+                "Factors",
+                "Factorial"
+            )
+        )
+
+        # Fibonacci Series
+        if choice == "Fibonacci Series":
+
+            st.subheader("Fibonacci Series")
+
+            terms = st.number_input(
+                "Number of terms",
+                min_value=1,
+                step=1
+            )
+
+            if st.button("Generate Fibonacci"):
+
+                fib = [0]
+                a, b = 0, 1
+
+                for i in range(terms - 1):
+                    a, b = b, a + b
+                    fib.append(a)
+
+                st.success(f"Fibonacci Series: {', '.join(map(str, fib))}")
+
+        # Prime Numbers
+        elif choice == "Prime Numbers":
+
+            st.subheader("Prime Number Generator")
+
+            num = st.number_input(
+                "Generate primes up to",
+                min_value=2,
+                step=1
+            )
+
+            if st.button("Generate Primes"):
+
+                primes = []
+
+                for n in range(2, num + 1):
+                    for k in range(2, n):
+                        if n % k == 0:
+                            break
+                    else:
+                        primes.append(n)
+
+                st.success(f"Prime Numbers: {', '.join(map(str, primes))}")
+
+        # HCF
+        elif choice == "HCF":
+
+            st.subheader("HCF Calculator")
+
+            numbers = st.text_input(
+                "Enter numbers separated by commas",
+                placeholder="12,18,24"
+            )
+
+            if st.button("Find HCF"):
+
+                nums = list(map(int, numbers.split(",")))
+
+                hcf = 1
+
+                for i in range(min(nums), 0, -1):
+
+                    for n in nums:
+                        if n % i != 0:
+                            break
+                    else:
+                        hcf = i
+                        break
+
+                st.success(f"HCF = {hcf}")
+
+        # LCM
+        elif choice == "LCM":
+
+            st.subheader("LCM Calculator")
+
+            numbers = st.text_input(
+                "Enter numbers separated by commas",
+                placeholder="12,18,24"
+            )
+
+            if st.button("Find LCM"):
+
+                nums = list(map(int, numbers.split(",")))
+
+                lcm = max(nums)
+
+                while True:
+
+                    for n in nums:
+                        if lcm % n != 0:
+                            break
+                    else:
+                        st.success(f"LCM = {lcm}")
+                        break
+
+                    lcm += 1
+
+        # Factors
+        elif choice == "Factors":
+
+            st.subheader("Factors Calculator")
+
+            num = st.number_input(
+                "Enter a number",
+                min_value=1,
+                step=1
+            )
+
+            if st.button("Find Factors"):
+
+                factors = []
+
+                for i in range(1, num + 1):
+                    if num % i == 0:
+                        factors.append(i)
+
+                st.success(f"Factors: {', '.join(map(str, factors))}")
+
+        # Factorial
+        elif choice == "Factorial":
+
+            st.subheader("Factorial Calculator")
+
+            num = st.number_input(
+                "Enter a number",
+                min_value=0,
+                step=1
+            )
+
+            if st.button("Calculate Factorial"):
+
+                factorial = 1
+
+                for i in range(1, num + 1):
+                    factorial *= i
+
+                st.success(f"Factorial of {num} = {factorial}")
+
+    st.write("**Status:** ✅ Completed")
+    st.write("A mathematical utility application that performs multiple number-based operations including Fibonacci Series generation, Prime Number generation, HCF calculation, LCM calculation, Factor finding, and Factorial calculation. The app provides instant results through an interactive interface, making mathematical computations quick and easy.")
+    st.write("**🛠 Technologies Used:**")
+    st.write("• Python")
+    st.write("• Streamlit")
+    st.write("**✨ Key Features:**")
+    st.write("• Fibonacci Series generator")
+    st.write("• Prime Number generator")
+    st.write("• Highest Common Factor (HCF) calculator")
+    st.write("• Lowest Common Multiple (LCM) calculator")
+    st.write("• Factors finder")
+    st.write("• Factorial calculator")
+    st.write("• Interactive operation selection")
+    st.write("• Instant result display")
+    st.write("• Clean and user-friendly interface")
 
         
 
