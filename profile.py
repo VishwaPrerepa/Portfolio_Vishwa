@@ -212,7 +212,157 @@ with tab3:
         st.write("Transition cleanly from building minor scripts to developing scalable, real-world user applications. 🌍")
         
         st.divider()
-        
+
+with tab4:
+    st.title("What I've Built")
+    st.divider()
+
+    st.subheader("1.💰 Expense Tracker & Budget Splitter")
+    with st.expander("Tap to see"):
+
+        st.title("💰 Expense Tracker & Budget Splitter")
+        st.subheader("Calculate how much each person should pay.")
+
+        bill = st.number_input(
+            "Enter Total Bill Amount (₹)",
+            min_value=0.0,
+            step=1.0
+        )
+
+        tip = st.slider(
+            "Select Tip Percentage",
+            min_value=0,
+            max_value=100,
+            value=10
+        )
+
+        people = st.number_input(
+            "Number of People",
+            min_value=1,
+            step=1
+        )
+
+        tip_amount = bill * (tip / 100)
+        total_bill = bill + tip_amount
+        share = total_bill / people
+
+        st.divider()
+
+        st.subheader("📊 Results")
+
+        st.write(f"Tip Amount: ₹{tip_amount:.2f}")
+        st.write(f"Total Bill: ₹{total_bill:.2f}")
+
+    st.write("**Status:** ✅ Completed")
+    st.write("Difficulty: ⭐⭐⭐☆☆")
+    st.write("A financial utility application that helps users calculate expenses and split bills fairly among friends. The app allows users to enter the total bill amount, select a tip percentage, and specify the number of people sharing the expense. It then instantly calculates the final amount and each person's share, making group payments simple and transparent.")
+    st.write("**🛠 Technologies Used:**")
+    st.write("• Python")
+    st.write("• Streamlit")
+    st.write("**✨ Key Features:**")
+    st.write("• Bill amount input")
+    st.write("• Adjustable tip percentage slider")
+    st.write("• Automatic per-person cost calculation")
+    st.write("• Clean and interactive user interface")
+    st.divider()
+
+    st.subheader("2.📏 Body Mass Index Calculator")
+
+    with st.expander("⚖️ Tap to see"):
+
+        st.subheader("BMI Calculator")
+
+        weight = st.number_input(
+            "Enter your weight (kg)",
+            min_value=1.0,
+            step=0.1
+        )
+
+        height = st.number_input(
+            "Enter your height (m)",
+            min_value=0.1,
+            step=0.01
+        )
+
+        if st.button("Calculate BMI"):
+
+            bmi = weight / (height ** 2)
+
+            st.write(f"Your BMI is: **{bmi:.2f}**")
+
+            if bmi < 18.5:
+                st.warning("Underweight")
+            elif bmi < 25:
+                st.success("Normal Weight")
+            elif bmi < 30:
+                st.warning("Overweight")
+            else:
+                st.error("Obese")
+
+    st.write("**Status:** ✅ Completed")
+    st.write("Difficulty: ⭐⭐☆☆☆")
+    st.write("A health and fitness application that calculates a user's Body Mass Index (BMI) based on their height and weight. The app instantly determines the BMI value and classifies it into categories such as Underweight, Normal Weight, Overweight, or Obese, helping users better understand their health status.")
+    st.write("**🛠 Technologies Used:**")
+    st.write("• Python")
+    st.write("• Streamlit")
+    st.write("**✨ Key Features:**")
+    st.write("• Weight input in kilograms")
+    st.write("• Height input in meters")
+    st.write("• Instant BMI calculation")
+    st.write("• Automatic health category classification")
+    st.write("• Simple and user-friendly interface")
+    st.divider()
+
+    st.subheader("3.🏦 Interest Calculator")
+
+    with st.expander("🏦Tap to see"):
+
+        st.title("🏦 Interest Calculator")
+
+        a = st.selectbox("What would you like to do?", ["--Select--", "Simple Interest", "Compound Interest"])
+
+        if a == "Simple Interest":
+            principal = st.number_input("Enter the principal amount between $1 to $100000", min_value=1.0, max_value=100000.0, step=100.0, value=10.0)
+            time = st.number_input("Enter the Tenure in years", min_value=1.0, max_value=100.0, step=1.0, value=5.0)
+            interest = st.number_input("Enter the rate of interest")
+
+            Simple_interest = (principal * time * interest) / 100
+            Total_Amount = principal + Simple_interest
+
+            st.divider()
+
+            st.subheader("Result")
+            st.metric(label="simple interest", value=f"${Simple_interest}")
+            st.metric(label="Total_Amount", value=f"${Total_Amount}")
+
+        elif a == "Compound Interest":
+            principal = st.number_input("Enter the principal amount between $1 to $100000", min_value=1.0, max_value=100000.0, step=100.0, value=10.0)
+            time = st.number_input("Enter the Tenure in years", min_value=1.0, max_value=100.0, step=1.0, value=5.0)
+            interest = st.number_input("Enter the rate of interest")
+
+            Compound_interest = (principal * (1 + interest / 100) ** time)
+            Total_Amount = principal + Compound_interest
+
+            st.divider()
+
+            st.subheader("Result")
+            st.metric(label="compound interest", value=f"${Compound_interest}")
+            st.metric(label="Total_Amount", value=f"${Total_Amount}")
+
+    st.write("**Status:** ✅ Completed")
+    st.write("Difficulty: ⭐⭐⭐☆☆")
+    st.write("A financial application that calculates both Simple Interest and Compound Interest based on the user's principal amount, interest rate, and investment period. The app instantly displays the interest earned and the final amount, helping users understand how money grows over time.")
+    st.write("**🛠 Technologies Used:**")
+    st.write("• Python")
+    st.write("• Streamlit")
+    st.write("**✨ Key Features:**")
+    st.write("• Principal amount input")
+    st.write("• Interest rate input")
+    st.write("• Investment period input")
+    st.write("• Simple Interest calculation")
+    st.write("• Compound Interest calculation")
+    st.write("• Instant result display")
+    st.write("• Clean and interactive user interface")
 
         
 
