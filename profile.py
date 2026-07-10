@@ -159,17 +159,6 @@ with tab2:
     st.markdown("#### 🥖 French")
     st.progress(0.99, text="99/100")
 
-st.subheader("✨**11th Grade Percentages**✨")
-n3, n4 = st.columns(2)
-
-with n3:
-    st.header("🏆**English and Math**")
-    st.metric(label="English", value="690")
-    st.metric(label="Math", value="790")     
-with n4:
-    st.header("🔥**TOTAL**")
-    st.metric(label="", value="1480")
-   
 with tab3:
         st.header("🎓About me")
 
